@@ -7,21 +7,27 @@ import page.SearchPage;
 
 public class TestCase extends BaseTest{
 
-    @Test(alwaysRun = true)
-    public void test1(){
+    @Test(alwaysRun = true, enabled = true)
+    public void getTitle(){
        // driver.get("https://duckduckgo.com/");
         Assert.assertEquals(driver.getTitle(), "Google", "Page title does not match!");
     }
-    @Test(alwaysRun = true)
-    public void test2(){
+    @Test(alwaysRun = true, enabled = true)
+    public void checkLogo(){
        // driver.get("https://duckduckgo.com/");
         HomePage homePage = new HomePage(driver);
         homePage.checkLogo();
     }
-    @Test(alwaysRun = true)
-    public void test3(){
+    @Test(alwaysRun = true, enabled = true)
+    public void findFirstResult(){
        // driver.get("https://duckduckgo.com/");
         SearchPage searchPage = new SearchPage(driver);
         searchPage.checkFirstResult("Selenium WebDriver","https://www.selenium.dev/documentation/webdriver/");
+    }
+    @Test(alwaysRun = true, enabled = true)
+    public void findForthResult(){
+        // driver.get("https://duckduckgo.com/");
+        SearchPage searchPage = new SearchPage(driver);
+        searchPage.checkForthResult("TestNG","TestNG Tutorial");
     }
 }

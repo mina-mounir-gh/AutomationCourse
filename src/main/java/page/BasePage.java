@@ -8,7 +8,7 @@ import java.time.Duration;
 
 public class BasePage {
     protected WebDriver driver ;
-    public int timeOut = 2;
+    public int timeOut = 4;
 
 
     // create constructor
