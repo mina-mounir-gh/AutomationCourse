@@ -18,7 +18,7 @@ public class BaseTest {
         }
         driver.get("https://duckduckgo.com/");
     }
-   @AfterMethod(alwaysRun = true)
+   @AfterMethod(alwaysRun = false)
     public void closeDriver(Method method){
         driver.quit();
     }

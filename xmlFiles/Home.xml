@@ -4,7 +4,10 @@
       <classes>
           <class name="tests.TestCase">
               <methods>
-                  <parameter name="browser" value="firefox"/>
+                  <parameter name="browser" value="chrome"/>
+<!--                  <include name="findForthResult" >-->
+<!--                      <parameter name="browser" value="firefox"/>-->
+<!--                  </include>-->
               </methods>
           </class>
       </classes>

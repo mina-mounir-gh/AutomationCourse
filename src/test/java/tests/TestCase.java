@@ -24,6 +24,11 @@ public class TestCase extends BaseTest{
     @Test(alwaysRun = true, enabled = true)
     public void findForthResult(){
         SearchPage searchPage = new SearchPage(driver);
+        searchPage.checkForthResult("TestNG Tutorial");
+    }
+    @Test(alwaysRun = true, enabled = true)
+    public void findSecondResult(){
+        SearchPage searchPage = new SearchPage(driver);
         searchPage.checkSecondResult("Cucumber IO","https://www.linkedin.com");
     }
 }

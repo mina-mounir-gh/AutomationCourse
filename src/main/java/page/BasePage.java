@@ -8,7 +8,7 @@ import java.time.Duration;
 
 public class BasePage {
     protected WebDriver driver ;
-    public int timeOut = 4;
+    public int timeOut = 7;
 
 
     // create constructor
@@ -16,15 +16,15 @@ public class BasePage {
         this.driver = driver;
     }
     protected WebElement getElement(By by){
-        waitUntilVisible(by);
+        waitForElement(by);
         return driver.findElement(by);
     }
-    protected  void waitUntilVisible(By by){
+    protected  void waitForElement(By by){
         Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
-        wait.until(d -> driver.findElement(by).isDisplayed());
+        wait.until(d -> driver.findElement(by).getText());
     }
     protected  void setText(By by, String value) {
-        waitUntilVisible(by);
+        waitForElement(by);
         getElement(by).sendKeys(value);
     }
     protected void keyPressEnter(By by) {
@@ -32,7 +32,7 @@ public class BasePage {
     }
     protected WebElement getElementByText(String text) {
         By by = By.xpath("//*[contains(text(), '" + text + "')]");
-        waitUntilVisible(by);
+        waitForElement(by);
         return getElement(by);
     }
 }
